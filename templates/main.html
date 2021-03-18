@@ -19,14 +19,14 @@ div {
 }
 </style>
 <head>
-    <title>Optical Character Recognition</title>
+    <title> Spam or not SMS recognition </title>
 </head>
 
-<h1 align="center" style="font-family:Fantasy;"> Optical Charcter Recognition </h1>
+<h1 align="center" style="font-family:Fantasy;"> Spam or not SMS recognition </h1>
 
 <div>
-<p align="center" style="font-family:Monospace;"> Please upload your image: </p>
-<form action="{{ url_for('main') }}", method="POST">
+<p align="center" style="font-family:Monospace;"> Please copy paste the SMS you want to test: </p>
+<form action="{{ url_for('predict') }}", method="POST">
     <fieldset >
         <legend>Input text:</legend>
         <input name="TT" type="text" required>
@@ -38,13 +38,7 @@ div {
 </div>
 
 <div class="result" align="center">
-    {% if result %}
-        {% for variable, value in original_input.items() %}
-            <b>{{ variable }}</b> : {{ value }}
-        {% endfor %}
-        <br>
-        <br> Text classification:
-           <p style="font-size:50px">{{ result }}</p>
-    {% endif %}
+    <br> Text classification:
+    <p style="font-size:50px">{{ result }}</p>
 </div>
 </html>
