@@ -25,7 +25,7 @@ def predict():
         if str(pred[0]) == '1':
             pred_msg = "SPAM"
         else:
-            pred_msg = "SPAM"
+            pred_msg = "HAM"
         return flask.render_template('/main.html',
                                      original_input={'TT': data},
                                      result=pred_msg)
